@@ -1,0 +1,7 @@
+View and pure don't require any transactions to be carried
+
+example:
+
+function() retrieve public view returns(uint256) {
+  return some_number
+}
