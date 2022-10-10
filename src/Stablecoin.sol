@@ -8,7 +8,7 @@ contract Stablecoin {
   uint256 decimals = 20;
   uint256 totalSupply = 1000000000000000000000000;
   address contractOwner = 0x823AF5e2e9279B4bc5A6298F281E3456A92608F9;
-  address[] public balances;
+  mapping(address => uint256) public balances;
   balances[contractOwner] = totalSupply;
   emitTransfer(address(0),contractOwner,totalSupply);
 }
