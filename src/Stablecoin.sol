@@ -3,13 +3,14 @@
 pragma solidity ^0.8.0;
 
 contract Stablecoin {
-  string symbol = "ESZL"
-  string name = "Lilangenicoin"
+  string symbol = "ESZL";
+  string name = "Lilangenicoin";
   uint256 decimals = 20;
   uint256 totalSupply = 1000000000000000000000000;
+  address contractOwner = 0x823AF5e2e9279B4bc5A6298F281E3456A92608F9;
   address[] public balances;
-  balances[0x823AF5e2e9279B4bc5A6298F281E3456A92608F9] = totalSupply;
-  emitTransfer(address(0),0x823AF5e2e9279B4bc5A6298F281E3456A92608F9,totalSupply);
+  balances[contractOwner] = totalSupply;
+  emitTransfer(address(0),contractOwner,totalSupply);
 }
 
 function balanceOf(address tokenOwner) public constant returns(uint balance) {
